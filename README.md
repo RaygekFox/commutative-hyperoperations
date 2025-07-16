@@ -36,7 +36,7 @@ We can therefore call them "first operation", "second operation", and so on.
 
 It is not hard to come up with a reasonable definition for $a\times_0b$ : it is simply the successor function:
 
-$$a+1+1+...+1\quad b\text{ times }=a+b = a\times_0b$$
+$$a+1+1+...+1\quad b\text{ times }=a+b = a\times_1b$$
 
 It is a bit strange comparing to operations one to three, because it is independent of $b$ – a unary function. But it is not a problem for us, we can still define it as a binary operation, just independent of one of the numbers.
 
@@ -44,7 +44,7 @@ This way, $a\times_4b$ is defined as repeated exponentiation:
 
 $$a^{a^{a^{...}}}\quad b\text{ times}$$
 
-An important notice is that powers are traditionally calculated from top to bottom, so \(a^{a^a}=a^{(a^a)}\neq ({a^a})^a\).
+An important notice is that powers are traditionally calculated from top to bottom, so $a^{a^a}=a^{(a^a)}\neq ({a^a})^a$.
 
  This operation is known as **tetration**. 
 
