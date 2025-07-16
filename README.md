@@ -1,9 +1,9 @@
 # Commutative Hyperoperations
 
 ## Introduction and Motivation
-This is my notes on my ongoing research of [commutative hyperoperations](https://en.wikipedia.org/wiki/Hyperoperation#Commutative_hyperoperations). They are described in details below, but the idea is that they are an alternative to traditional sequence of operations, also known as [hyperoperations](https://en.wikipedia.org/wiki/Hyperoperation): addition, multiplication, exponentiation, tetration, ... . I'm trying to use the idea to explore the idea of [functional square root](https://en.wikipedia.org/wiki/Half-exponential_function) of function $exp(x)$, and use the latter one to deepen the idea of commutative hyperoperations themself. Potentially this could suggest a more natural generalization of tetration to non-integer heights.
+This is my notes on my ongoing research of [commutative hyperoperations](https://en.wikipedia.org/wiki/Hyperoperation#Commutative_hyperoperations). They are described in details below, but the idea is that they are an alternative to traditional sequence of operations, also known as [hyperoperations](https://en.wikipedia.org/wiki/Hyperoperation): addition, multiplication, exponentiation, tetration, ... . I'm trying to use them to explore the idea of [functional square root](https://en.wikipedia.org/wiki/Half-exponential_function) of function $\exp(x)$, and use the latter one to deepen the idea of commutative hyperoperations themself. Potentially this could suggest a more natural generalization of tetration to non-integer heights.
 
-There are no serious pre-reqs for reading this, I try to explain all concepts, not known to general public.
+There are no serious pre-reqs for reading this, I try to explain all concepts not known to general public.
 
 I do not present any essentially new ideas, but try to offer a different perspective and give more intuition into these topics.
 
