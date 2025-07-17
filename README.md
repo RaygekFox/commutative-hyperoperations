@@ -214,3 +214,64 @@ And now we can finally increase the order inside big brackets(arguments of $\cir
 $$
     A=((a\circ_{n+1}c)\circ_{n}(b\circ_{n+1}c))\quad _\square
 $$
+
+### Recap
+1. Main definitions and notation:
+
+$$
+\begin{align}
+\exp(\exp(...(x)...)\quad n \text{ times}\quad &:=x^{(+n)}
+\\
+\ln(\ln(...(x)...)\quad n \text{ times}\quad &:=x^{(-n)}
+\\
+x&=x^{(0)}
+\\
+(x^{(+m)})^{(+n)} &:= x^{(+m+n)}
+\\
+x\circ_1y &:= x+y
+\\
+x\circ_{n+1}y &:= (x^{(-1)}\circ_ny^{(-1)})^{(+1)}
+\end{align}
+$$
+
+2. All operations $\circ_n$ are commutative and distributive over $\circ_{n-1}$.
+
+3. Rule for change of operations:
+
+$$
+    (x\circ_ny)=(x^{(-m)}\circ_{n-m}y^{(-m)})^{(+m)}\quad\forall n,m\in\mathbb{Z}
+$$
+
+## Order Arithmetics
+
+Consider an interval $[0,1)$. It's image under $\exp$ operation is $[1,e)$. Image of that interval is $[e,e^e)$. Notice how applying $\exp$ to the original interval divides all non-negative reals into a set of non-overlaping intervals. Furthermore, the image of $[0,1)$ under $\ln$ is $(-\infty, 0)$. It's easy to see that any real number $x$ belongs to exactly one of these intervals. Furthermore, since for any pair of intervals $[a,e^a)$ and $[e^a, e^{e^a})$ the function $\exp$ is 1-to-1, any number $x$ can be uniquely expressed as
+
+$$
+x=a^{(+n)},\quad a\in[0,1),n\in\mathbb{Z}\geq -1
+$$
+
+Let's call such number $a$ **exponential base** of $x$, and $n$ – **base order** of $x$.
+
+Also let's define two respective functions:
+
+$$
+\begin{align}
+\beta(x)=a &\iff x=a^{(+n)},\quad a\in[0,1),n\in\mathbb{Z}\geq -1
+\\
+\omega(x)=n &\iff x=a^{(+n)},\quad a\in[0,1),n\in\mathbb{Z}\geq -1
+\end{align}
+$$
+
+Here $\beta$ and $\omega$ stand for "base" and "order" respectively. Graph of $\beta(x)$:
+
+<img width="1241" height="427" alt="Screenshot 2025-07-17 at 16 27 36" src="https://github.com/user-attachments/assets/e4989ab2-acbc-45ab-bf05-aaba70efedfe" />
+
+Since $1^{(+4)}=e^{e^{e^e}}=e^{3814279.10476...}\approx10^{1656520}$, most "reasonable" numbers will have $-1\leq\omega(x)\leq 4$.
+
+Notice this property:
+
+$$
+x^{(-\omega(x))}=\beta(x)
+$$
+
+In other words, we have a function $f(x)=x^{(-\omega(x))}$ that maps reals to interval $[0,1)$. This will be useful for the next topic.
