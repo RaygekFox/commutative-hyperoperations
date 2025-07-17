@@ -266,7 +266,7 @@ Here $\beta$ and $\omega$ stand for "base" and "order" respectively. Graph of $\
 
 <img width="1241" height="427" alt="Screenshot 2025-07-17 at 16 27 36" src="https://github.com/user-attachments/assets/e4989ab2-acbc-45ab-bf05-aaba70efedfe" />
 
-Since $1^{(+4)}=e^{e^{e^e}}=e^{3814279.10476...}\approx10^{1656520}$, most "reasonable" numbers will have $-1\leq\omega(x)\leq 4$.
+Since $1^{(+4)}=e^{e^{e^e}}=e^{3814279.10476...}\approx10^{1656520}$, most "reasonable" numbers will have base order between -1 and 4.
 
 Notice this property:
 
