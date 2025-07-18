@@ -334,6 +334,14 @@ This concludes the proof of
 
 Since we can express $a^b$ as $a\circ_3 e^b$, it follows from this theorem that
 
-$$
-a^b < \exp(\exp(\text{max}(a,e^b)))
-$$
+> #### Corollary 1.1
+> 
+> $$
+> a^b < \exp(\exp(\text{max}(a,e^b)))
+> $$
+
+And since tetration operation can increase the base order of its arguments by any number, it means that
+
+> #### Corollary 1.2
+>
+> Any operation $\circ_n$ grows slower than tetration.
