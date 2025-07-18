@@ -282,7 +282,7 @@ In other words, we have a function $f(x)=x^{(-\omega(x))}$ that maps reals to in
 
 Since any $x\in [0,1)$ will have base order equal to 0, let's call that interval the $0$-th **base order interval**. The interval $[1,e)$ will be the first base order interval, and so on. $(-\infty, 0)$ is the minus first base order interval. In general, notice that $n$-th interval will be $[e^{...e}, e^{e^{...e}})$ with $n$ $e$'s in the left tower, and $n+1$ in the right, so recalling the standard notation of tetration, it is the same as $[e\uparrow\uparrow n, e\uparrow\uparrow (n+1))$, with respective remark regarding the $(-\infty,0)$.
 
-This way, any number $x$ belongs to $\beta(x)$-th base order interval.
+This way, any number $x$ belongs to $\omega(x)$-th base order interval.
 
 
 
@@ -294,7 +294,7 @@ a) $x^{(-n)}\geq y^{(-n)}$.
 
 b) $x\circ_ny$ is greater than both $x$ and $y$ if and only if both $x^{(-n)}$ and $y^{(-n)}$ are greater than 0. Let's consider the case when they are.
 
-$x^{(-n)}$ belongs to $\beta(x^{(-n)})$-th base order interval.
+$x^{(-n)}$ belongs to $\omega(x^{(-n)})$-th base order interval.
 
 Notice that length of every base order interval starting from the second one is greater than the sum of lengths of the previous(non-negative) intervals:
 
@@ -308,21 +308,21 @@ $$
 \end{align}
 $$
 
-This means that any number $a$ is smaller than the distance from $a$ to the end of the its next base order interval, the $(\beta(a)+1)$-th. Since $y^{(-n)}\leq x^{(-n)}$, their sum cannot reach there too, it can be at most in $(\beta(x)+1)$-th base order interval.
+This means that any number $a$ is smaller than the distance from $a$ to the end of the its next base order interval, the $(\omega(a)+1)$-th. Since $y^{(-n)}\leq x^{(-n)}$, their sum cannot reach there too, it can be at most in $(\omega(x)+1)$-th base order interval.
 
 So, the base order of the sum of two numbers is at most one greater than that of the bigger of the numbers:
 
 $$
-\beta(a+b)\leq(\text{max}(\beta(a),\beta(b))+1)
+\omega(a+b)\leq(\text{max}(\omega(a),\omega(b))+1)
 $$
 
-It's easy to see that $\beta(x^{(+n)})=\beta(x)+n$, so in our case:
+It's easy to see that $\omega(x^{(+n)})=\omega(x)+n$, so in our case:
 
 $$
 \begin{align}
-\beta(x^{(-n)}+y^{(-n)}) &\leq (\text{max}(\beta(x^{(-n)}),\beta(y^{(-n)}))+1)
+\omega(x^{(-n)}+y^{(-n)}) &\leq (\text{max}(\omega(x^{(-n)}),\omega(y^{(-n)}))+1)
 \\
-\beta(x\circ_ny) &\leq (\text{max}(\beta(x),\beta(y))+1)
+\omega(x\circ_ny) &\leq (\text{max}(\omega(x),\omega(y))+1)
 \end{align}
 $$
 
