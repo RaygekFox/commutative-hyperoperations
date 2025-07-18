@@ -46,7 +46,7 @@ $$a^{a^{a^{...}}}\quad b\text{ times}$$
 
 An important notice is that powers are traditionally calculated from top to bottom, so $a^{a^a}=a^{(a^a)}\neq ({a^a})^a$.
 
- This operation is known as **tetration**. 
+ This operation is known as **tetration**. It's usually denoted as $a\uparrow\uparrow b$.
 
  We can continue this process indefinitely:
 
@@ -244,7 +244,11 @@ $$
 
 ## Order Arithmetics
 
-Consider an interval $[0,1)$. It's image under $\exp$ operation is $[1,e)$. Image of that interval is $[e,e^e)$. Notice how applying $\exp$ to the original interval divides all non-negative reals into a set of non-overlaping intervals. Furthermore, the image of $[0,1)$ under $\ln$ is $(-\infty, 0)$. It's easy to see that any real number $x$ belongs to exactly one of these intervals. Furthermore, since for any pair of intervals $[a,e^a)$ and $[e^a, e^{e^a})$ the function $\exp$ is 1-to-1, any number $x$ can be uniquely expressed as
+### Exponential Base and Base Order
+
+Consider an interval $[0,1)$. It's image under $\exp$ operation is $[1,e)$. Image of that interval is $[e,e^e)$. Notice how applying $\exp$ to the original interval divides all non-negative reals into a set of non-overlaping intervals. Furthermore, the image of $[0,1)$ under $\ln$ is $(-\infty, 0)$. It's easy to see that any real number $x$ belongs to exactly one of these intervals.
+
+Furthermore, since for any pair of intervals $[a,e^a)$ and $[e^a, e^{e^a})$ the function $\exp$ is 1-to-1, any number $x$ can be uniquely expressed as
 
 $$
 x=a^{(+n)},\quad a\in[0,1),n\in\mathbb{Z}\geq -1
@@ -275,3 +279,61 @@ x^{(-\omega(x))}=\beta(x)
 $$
 
 In other words, we have a function $f(x)=x^{(-\omega(x))}$ that maps reals to interval $[0,1)$. This will be useful for the next topic.
+
+Since any $x\in [0,1)$ will have base order equal to 0, let's call that interval the $0$-th **base order interval**. The interval $[1,e)$ will be the first base order interval, and so on. $(-\infty, 0)$ is the minus first base order interval. In general, notice that $n$-th interval will be $[e^{...e}, e^{e^{...e}})$ with $n$ $e$'s in the left tower, and $n+1$ in the right, so recalling the standard notation of tetration, it is the same as $[e\uparrow\uparrow n, e\uparrow\uparrow (n+1))$, with respective remark regarding the $(-\infty,0)$.
+
+This way, any number $x$ belongs to $\beta(x)$-th base order interval.
+
+
+
+### Bounds of Base Order
+
+Let's say we want to do an operation $x\circ_ny$. It is the same as taking the sum $(x^{(-n)}+y^{(-n)})^{(+n)}$. Without the loss of generality, let's assume $x\geq y$. Since $\exp$ function is strictly increasing, this means that 
+
+a) $x^{(-n)}\geq y^{(-n)}$.
+
+b) $x\circ_ny$ is greater than both $x$ and $y$ if and only if both $x^{(-n)}$ and $y^{(-n)}$ are greater than 0. Let's consider the case when they are.
+
+$x^{(-n)}$ belongs to $\beta(x^{(-n)})$-th base order interval.
+
+Notice that length of every base order interval starting from the second one is greater than the sum of lengths of the previous(non-negative) intervals:
+
+$$
+\begin{align}
+|[1,e)| &> |[0,1)|
+\\
+|[e,e^e)| &> |[0,e)| 
+\\
+...
+\end{align}
+$$
+
+This means that any number $a$ is smaller than the distance from $a$ to the end of the its next base order interval, the $(\beta(a)+1)$-th. Since $y^{(-n)}\leq x^{(-n)}$, their sum cannot reach there too, it can be at most in $(\beta(x)+1)$-th base order interval.
+
+So, the base order of the sum of two numbers is at most one greater than that of the bigger of the numbers:
+
+$$
+\beta(a+b)\leq(\text{max}(\beta(a),\beta(b))+1)
+$$
+
+It's easy to see that $\beta(x^{(+n)})=\beta(x)+n$, so in our case:
+
+$$
+\begin{align}
+\beta(x^{(-n)}+y^{(-n)}) &\leq (\text{max}(\beta(x^{(-n)}),\beta(y^{(-n)}))+1)
+\\
+\beta(x\circ_ny) &\leq (\text{max}(\beta(x),\beta(y))+1)
+\end{align}
+$$
+
+This concludes the proof of
+
+> #### Theorem 1
+> 
+> Base order of the result of any operation $\circ_n$ is higher than the base order of the greater of its arguments by at most 1.
+
+Since we can express $a^b$ as $a\circ_3 e^b$, it follows from this theorem that
+
+$$
+a^b < \exp(\exp(\text{max}(a,e^b)))
+$$
