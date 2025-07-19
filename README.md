@@ -246,12 +246,12 @@ $$
 
 ### Exponential Base and Base Order
 
-Consider an interval $[0,1)$. It's image under $\exp$ operation is $[1,e)$. Image of that interval is $[e,e^e)$. Notice how applying $\exp$ to the original interval divides all non-negative reals into a set of non-overlaping intervals. Furthermore, the image of $[0,1)$ under $\ln$ is $(-\infty, 0)$. It's easy to see that any real number $x$ belongs to exactly one of these intervals.
+Consider an interval $(0,1]$. It's image under $\exp$ operation is $(1,e]$. Image of that interval is $(e,e^e]$. Notice how applying $\exp$ to the original interval divides all non-negative reals into a set of non-overlaping intervals. Furthermore, the image of $(0,1]$ under $\ln$ is $(-\infty, 0]$. It's easy to see that any real number $x$ belongs to exactly one of these intervals.
 
-Furthermore, since for any pair of intervals $[a,e^a)$ and $[e^a, e^{e^a})$ the function $\exp$ is 1-to-1, any number $x$ can be uniquely expressed as
+Furthermore, since for any pair of intervals $(a,e^a]$ and $(e^a, e^{e^a}]$ the function $\exp$ is 1-to-1, any number $x$ can be uniquely expressed as
 
 $$
-x=a^{(+n)},\quad a\in[0,1),n\in\mathbb{Z}\geq -1
+x=a^{(+n)},\quad a\in(0,1],n\in\mathbb{Z}\geq -1
 $$
 
 Let's call such number $a$ **exponential base** of $x$, and $n$ – **base order** of $x$.
@@ -260,9 +260,9 @@ Also let's define two respective functions:
 
 $$
 \begin{align}
-\beta(x)=a &\iff x=a^{(+n)},\quad a\in[0,1),n\in\mathbb{Z}\geq -1
+\beta(x)=a &\iff x=a^{(+n)},\quad a\in(0,1],n\in\mathbb{Z}\geq -1
 \\
-\omega(x)=n &\iff x=a^{(+n)},\quad a\in[0,1),n\in\mathbb{Z}\geq -1
+\omega(x)=n &\iff x=a^{(+n)},\quad a\in(0,1],n\in\mathbb{Z}\geq -1
 \end{align}
 $$
 
@@ -278,9 +278,9 @@ $$
 x^{(-\omega(x))}=\beta(x)
 $$
 
-In other words, we have a function $f(x)=x^{(-\omega(x))}$ that maps reals to interval $[0,1)$. This will be useful for the next topic.
+In other words, we have a function $f(x)=x^{(-\omega(x))}$ that maps reals to interval $(0,1]$. This will be useful for the next topic.
 
-Since any $x\in [0,1)$ will have base order equal to 0, let's call that interval the $0$-th **base order interval**. The interval $[1,e)$ will be the first base order interval, and so on. $(-\infty, 0)$ is the minus first base order interval. In general, notice that $n$-th interval will be $[e^{...e}, e^{e^{...e}})$ with $n$ $e$'s in the left tower, and $n+1$ in the right, so recalling the standard notation of tetration, it is the same as $[e\uparrow\uparrow n, e\uparrow\uparrow (n+1))$, with respective remark regarding the $(-\infty,0)$.
+Since any $x\in (0,1]$ will have base order equal to 0, let's call that interval the $0$-th **base order interval**. The interval $(1,e]$ will be the first base order interval, and so on. $(-\infty, 0]$ is the minus first base order interval. In general, notice that $n$-th interval will be $(e^{...e}, e^{e^{...e}}]$ with $n$ $e$'s in the left tower, and $n+1$ in the right, so recalling the standard notation of tetration, it is the same as $[e\uparrow\uparrow n, e\uparrow\uparrow (n+1))$, with respective remark regarding the $(-\infty,0]$.
 
 This way, any number $x$ belongs to $\omega(x)$-th base order interval.
 
@@ -300,9 +300,9 @@ Notice that length of every base order interval starting from the second one is 
 
 $$
 \begin{align}
-|[1,e)| &> |[0,1)|
+|(1,e\| &> |(0,1]|
 \\
-|[e,e^e)| &> |[0,e)| 
+|(e,e^e]| &> |(0,e]| 
 \\
 ...
 \end{align}
