@@ -215,6 +215,8 @@ $$
     A=((a\circ_{n+1}c)\circ_{n}(b\circ_{n+1}c))\quad _\square
 $$
 
+A detailed exploration of operation $\circ_0$ cna be found in [this paper](https://arxiv.org/pdf/math/0112050) by Michael L. Carrol, where he calls it "join operation".
+
 ### Recap
 1. Main definitions and notation:
 
