@@ -246,7 +246,7 @@ $$
 
 ## Order Arithmetics
 
-### Exponential Base and Base Order
+### Exponential Base and Exponential Order
 
 Consider an interval $(0,1]$. It's image under $\exp$ operation is $(1,e]$. Image of that interval is $(e,e^e]$. Notice how applying $\exp$ to the original interval divides all non-negative reals into a set of non-overlaping intervals. Furthermore, the image of $(0,1]$ under $\ln$ is $(-\infty, 0]$. It's easy to see that any real number $x$ belongs to exactly one of these intervals.
 
@@ -256,7 +256,7 @@ $$
 x=a^{(+n)},\quad a\in(0,1],n\in\mathbb{Z}\geq -1
 $$
 
-Let's call such number $a$ **exponential base** of $x$, and $n$ – **base order** of $x$.
+Let's call such number $a$ **exponential base** of $x$, and $n$ – **exponential order** of $x$.
 
 Also let's define two respective functions:
 
@@ -272,7 +272,7 @@ Here $\beta$ and $\omega$ stand for "base" and "order" respectively. Graph of $\
 
 <img width="1241" height="427" alt="Screenshot 2025-07-17 at 16 27 36" src="https://github.com/user-attachments/assets/e4989ab2-acbc-45ab-bf05-aaba70efedfe" />
 
-Since $1^{(+4)}=e^{e^{e^e}}=e^{3814279.10476...}\approx10^{1656520}$, most "reasonable" numbers will have base order between -1 and 4.
+Since $1^{(+4)}=e^{e^{e^e}}=e^{3814279.10476...}\approx10^{1656520}$, most "reasonable" numbers will have exponential order between -1 and 4.
 
 Notice this property:
 
@@ -282,13 +282,13 @@ $$
 
 In other words, we have a function $f(x)=x^{(-\omega(x))}$ that maps reals to interval $(0,1]$. This will be useful for the next topic.
 
-Since any $x\in (0,1]$ will have base order equal to 0, let's call that interval the $0$-th **base order interval**. The interval $(1,e]$ will be the first base order interval, and so on. $(-\infty, 0]$ is the minus first base order interval. In general, notice that $n$-th interval will be $(e^{...e}, e^{e^{...e}}]$ with $n$ $e$'s in the left tower, and $n+1$ in the right, so recalling the standard notation of tetration, it is the same as $[e\uparrow\uparrow n, e\uparrow\uparrow (n+1))$, with respective remark regarding the $(-\infty,0]$.
+Since any $x\in (0,1]$ will have exponential order equal to 0, let's call that interval the $0$-th **exponential order interval**. The interval $(1,e]$ will be the first exponential order interval, and so on. $(-\infty, 0]$ is the minus first exponential order interval. In general, notice that $n$-th interval will be $(e^{...e}, e^{e^{...e}}]$ with $n$ $e$'s in the left tower, and $n+1$ in the right, so recalling the standard notation of tetration, it is the same as $[e\uparrow\uparrow n, e\uparrow\uparrow (n+1))$, with respective remark regarding the $(-\infty,0]$.
 
-This way, any number $x$ belongs to $\omega(x)$-th base order interval.
+This way, any number $x$ belongs to $\omega(x)$-th exponential order interval.
 
 
 
-### Bounds of Base Order
+### Bounds of exponential order
 
 Let's say we want to do an operation $x\circ_ny$. It is the same as taking the sum $(x^{(-n)}+y^{(-n)})^{(+n)}$. Without the loss of generality, let's assume $x\geq y$. Since $\exp$ function is strictly increasing, this means that 
 
@@ -296,9 +296,9 @@ a) $x^{(-n)}\geq y^{(-n)}$.
 
 b) $x\circ_ny$ is greater than both $x$ and $y$ if and only if both $x^{(-n)}$ and $y^{(-n)}$ are greater than 0. Let's consider the case when they are.
 
-$x^{(-n)}$ belongs to $\omega(x^{(-n)})$-th base order interval.
+$x^{(-n)}$ belongs to $\omega(x^{(-n)})$-th exponential order interval.
 
-Notice that length of every base order interval starting from the second one is greater than the sum of lengths of the previous(non-negative) intervals:
+Notice that length of every exponential order interval starting from the second one is greater than the sum of lengths of the previous(non-negative) intervals:
 
 $$
 \begin{align}
@@ -310,9 +310,9 @@ $$
 \end{align}
 $$
 
-This means that any number $a$ is smaller than the distance from $a$ to the end of the its next base order interval, the $(\omega(a)+1)$-th. Since $y^{(-n)}\leq x^{(-n)}$, their sum cannot reach there too, it can be at most in $(\omega(x)+1)$-th base order interval.
+This means that any number $a$ is smaller than the distance from $a$ to the end of the its next exponential order interval, the $(\omega(a)+1)$-th. Since $y^{(-n)}\leq x^{(-n)}$, their sum cannot reach there too, it can be at most in $(\omega(x)+1)$-th exponential order interval.
 
-So, the base order of the sum of two numbers is at most one greater than that of the bigger of the numbers:
+So, the exponential order of the sum of two numbers is at most one greater than that of the bigger of the numbers:
 
 $$
 \omega(a+b)\leq(\text{max}(\omega(a),\omega(b))+1)
@@ -332,7 +332,7 @@ This concludes the proof of
 
 > #### Theorem 1
 > 
-> Base order of the result of any operation $\circ_n$ is higher than the base order of the greater of its arguments by at most 1.
+> exponential order of the result of any operation $\circ_n$ is higher than the exponential order of the greater of its arguments by at most 1.
 
 Since we can express $a^b$ as $a\circ_3 e^b$, it follows from this theorem that
 
@@ -342,8 +342,33 @@ Since we can express $a^b$ as $a\circ_3 e^b$, it follows from this theorem that
 > a^b < \exp(\exp(\text{max}(a,e^b)))
 > $$
 
-And since tetration operation can increase the base order of its arguments by any number, it means that
+And since tetration operation can increase the exponential order of its arguments by any number, it means that
 
 > #### Corollary 1.2
 >
 > Any operation $\circ_n$ grows slower than tetration.
+
+
+## Half-exponential functions
+
+[Half-exponential function](https://en.wikipedia.org/wiki/Half-exponential_function) or functional square root of $\exp$ is such function $f(x)$ that $f(f(x))=\exp(x)$.
+
+Such functions do exist, with somewhat canonical solution being the Kneser's function, proposed in 1950. It's defined for complex numbers and uses a stable point $Q$ such that $e^Q=Q$. I'm mostly interested in applying hyperoperations to real numbers, so we will try to find a purely real function.
+
+It has been proven, that such a function cannot have a closed-form solution using standard arithmetic operations. Luckily, the concept of exponential base and order will be enough to overcome this.
+
+There are(infintely many) non-closed-form solutions, but as commonly presented, they are not smooth(infinitely-differentiable).
+
+### Continuous non-smooth half-exponential functions
+
+I will explain a classical construction of a family of half-exponential function, but using exponential base and order ideas. This will help us avoid cases and iteration in our definition(iteration is "hidden" in calculation of $\beta(x)$ and $\omega(x)$ ).
+
+Let's choose a number $x$ and calculate its exponental base and order: 
+
+$$x=\beta(x)^{(\omega(x))}$$
+
+Now consider a function that maps $x$ to the sum of these numebrs:
+
+$$f(x) = \omega(x)+\beta(x)$$
+
+Here is a very nice thing about it: since $\omega(x)$ is an integer and $\beta(x) \in (0,1]$, they essentially represent a real number as its integer and fractional part. They almost give the standard decimal notation for $f(x)$ with a small exception for when $\beta(x)=1$, then it gives the next integer after $\omega(x)$.
