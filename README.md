@@ -359,7 +359,7 @@ It has been proven, that such a function cannot have a closed-form solution usin
 
 There are(infintely many) non-closed-form solutions, but as commonly presented, they are not smooth(infinitely-differentiable).
 
-### Continuous non-smooth half-exponential functions
+### Continuous non-smooth half-exponential function
 
 I will explain a classical construction of a family of half-exponential function, but using exponential base and order ideas. This will help us avoid cases and iteration in our definition(iteration is "hidden" in calculation of $\beta(x)$ and $\omega(x)$ ).
 
@@ -369,6 +369,82 @@ $$x=\beta(x)^{(\omega(x))}$$
 
 Now consider a function that maps $x$ to the sum of these numebrs:
 
-$$f(x) = \omega(x)+\beta(x)$$
+$$IN(x) = \omega(x)+\beta(x)$$
 
-Here is a very nice thing about it: since $\omega(x)$ is an integer and $\beta(x) \in (0,1]$, they essentially represent a real number as its integer and fractional part. They almost give the standard decimal notation for $f(x)$ with a small exception for when $\beta(x)=1$, then it gives the next integer after $\omega(x)$.
+IN stands for **interval normalization function**.
+
+Here is a very nice thing about it: since $\omega(x)$ is an integer and $\beta(x) \in (0,1]$, they essentially represent a real number as its integer and fractional part. They almost give the standard decimal notation for $IN(x)$ with a small exception for when $\beta(x)=1$, then it gives the next integer after $\omega(x)$. This way, image of each exponential order interval has length 1.
+
+Therefore, if we take $x$ and $e^x$, their images will be 1 apart:
+
+$$IN(x)+1 = IN(e^x)$$
+
+Furthermore, $IN$ is 1-to-1 from $\mathbb{R}$ to $\mathbb{R}_{>-1}$, so $IN^{-1}$ exists(simply raise the fractional part of a number to the order of its whole part).
+
+This way, $\exp(x)$ is identical to taking $IN$ of $x$, adding 1, and applying $IN^{-1}$ to the result:
+
+$$\exp(x) = IN^{-1}(IN(x)+1)$$
+
+And it lets us naturally define a half-exponential function:
+
+$$\exp^{\frac12}(x) = IN^{-1}(IN(x)+\frac12)$$
+
+Of course, no need to stop on half-exponential funciton – we can easily define any fractional iteration of it:
+
+$$\exp^{a}(x) = IN^{-1}(IN(x)+a)\quad \forall a \in [0,1)$$
+
+Don't forget that not all such functions will be defined for all $x$, since $IN^{-1}$ is only defined for $x>-1$.
+
+Such $\exp^{a}$ is identical to the function, defined in [the wikipedia article](https://en.wikipedia.org/wiki/Half-exponential_function), linked above.
+
+If you are happy with function differentiable only twice, you are good to go. We are about to solve this, but the result function won't have all its derviatives positive everythwere(will have kind of bumps), so there is a tradeoff.
+
+To see why this function is only differentiable twice, take a look at $IN^{-1}(x)$ on the interval $(0,2]$:
+
+<img width="620" height="421" alt="Screenshot 2026-01-01 at 17 18 44" src="https://github.com/user-attachments/assets/111e538b-af01-4651-9f8b-b69a04ebc0cc" />
+
+The first half(black) is identical to $f(x)=x$, since we are raising a number to the 0-th order. The right half(red) is identical to $f(x)=e^{x-1}$. At the point where they meet, only their values and first derivatives are equal.
+
+### Smooth half-exponential function
+
+The workaround to get a smooth function would be to find such a function $f(x)$ that:
+
+$$
+\begin{align}
+&f(0)=0
+\\
+&f(1)=1
+\\
+&\frac{\text{d}^n f}{\text{d}x^n}(1) = \frac{\text{d}^n e^{f(x-1)}}{\text{d}x^n}(1) \quad \forall n\in N
+\end{align}
+$$
+
+This is tricky, but one way to do this is to "morph" $x$ into $e^{x-1}$ using smooth bump function flat on both ends. That it a function changing from one value to another on some interval with all its derivatives equal to 0 on the ends of the interval.
+
+For this, we need some non-constant funciton that has all derivatives (approaching) 0 at some point. One such function is $f(x)=e^{-/frac{1}{x}}$. It's only defined for $x>0$, but that's good enough. Then we do the following:
+
+<img width="853" height="168" alt="Screenshot 2026-01-01 at 18 24 15" src="https://github.com/user-attachments/assets/1c232d32-d68f-4298-b324-e74934fea64a" />
+
+This function $g$ works as weight to smoothly turn $x$ into $e^{x-1}$:
+
+$$h(x) = x\cdot g(1-x) + e^{1-x}\cdot g(x)$$
+
+So now, combining $h(x)$ for $(0,1]$ and $e^{h(x-1)}$ for $[1,e)$ gives us exactly the function with properties we wanted.
+
+It's important to say that we could choose another function instead of $e^{-/frac{1}{x}}$ – any function defined on $(0,1]$ and all derivatives approaching 0 will do. So the choice we made is not natural in any sense, and we are actually talking about a family of half-exponential functions and a specific example of one.
+
+That weighted function $h$ is a modification of $IN^{-1}$, so its inverse $h^{-1}$ is a modification of $IN$. So we can call $h^{-1}$ a **smooth interval normalization function** and denote it $IN_h(x)$.
+
+If needed for clarity, we could denote the original non-smooth one $IN_x$, implying identity function $f(x)=x$.
+
+So, the smooth fractional exponential function is:
+
+$$\exp^{a}(x) = IN_h^{-1}(IN_h(x)+a)\quad \forall a \in [0,1)$$
+
+If we want $a$ to be any number outside of $[0,1)$ interval, we round it down, apply exponential(logarithmic if negative) function respective number of times, and then this fractional exponential. 
+
+Here is a plot of $IN_h^{-1}(x)$ for $x\in(0,2]$:
+
+<img width="699" height="351" alt="Screenshot 2026-01-03 at 17 15 17" src="https://github.com/user-attachments/assets/31c835ae-0e8c-4d0f-929c-0f831ae1882b" />
+
+As you see, it has two bumps, on each half. I'm not sure if it's possible to avoid this. The weighted sum approach will most likely not work.
